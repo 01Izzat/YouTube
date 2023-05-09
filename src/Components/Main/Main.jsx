@@ -1,9 +1,22 @@
-
-
+import { useState } from "react";
+import { Box, Container, Stack, Typography } from "@mui/material";
+import { colors } from "../../Constans/colors";
+import Category from "../Category/Category";
 
 const Main = () => {
+  const [selectedCategory, setSelectedCategory] = useState('New')
   return (
-    <div>Channel</div>
+    <Stack>
+      <Category/>
+      <Box p={2} sx={{ height:'90vh'}}>
+        <Container maxWidth={'90%'}>
+          <Typography variant="h4" fontWeight={'bold'} mb={2}>
+            {selectedCategory} <span style={{color: colors.secondary}}>videos</span>
+          </Typography>
+          Videos
+        </Container>
+      </Box>
+    </Stack>
   )
 }
 
