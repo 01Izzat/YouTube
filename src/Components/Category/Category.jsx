@@ -2,12 +2,15 @@ import { category } from "../../Constans"
 import {  Stack } from "@mui/material"
 import { colors } from "../../Constans/colors"
 
-const Category = () => {
+const Category = ({selectedCategoryHandler, selectedCategory}) => {
   return (
     <Stack direction={'row'} sx={{overflowX: 'scroll'}}>
       {category.map(item => (
-        <button key={item.key} className={'category-btn'} style={{borderRadius: 0}}>
-          <span style={{color: colors.secondary, marginRight: '15px'}} >{item.icon}</span>
+        <button key={item.key} className={'category-btn'} 
+        style={{borderRadius: '0', background: item.name === selectedCategory && colors.secondary, 
+        color: item.name === selectedCategory && '#fff'}} 
+        onClick={() =>selectedCategoryHandler(item.name)}>
+          <span style={{color: item.name === selectedCategory ? "#fff" :colors.secondary , marginRight: '15px'}} >{item.icon}</span>
           <span style={{opacity: '1'}}>{item.name}</span>
         </button>
       ))}
@@ -15,4 +18,4 @@ const Category = () => {
   )
 }
 
-export default Category
+export default Category;
