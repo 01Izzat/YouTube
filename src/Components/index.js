@@ -8,5 +8,5 @@ export { default as SearchBar } from "./Search-bar/searchBar";
 export { default as Category } from "./Category/Category";
 export { default as Videos } from "./Videos/Videos";
 export { default as VideoCard } from "./Video-card/VideoCard";
-// export { default as ChannelCard } from './channel-card/channel-card'
+export { default as ChannelCard } from "./Channel-card/ChannelCard";
 // export { default as Loader } from './loader/loader'
