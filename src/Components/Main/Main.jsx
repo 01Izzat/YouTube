@@ -12,7 +12,7 @@ const Main = () => {
   const selectedCategoryHandler = category => setSelectedCategory(category)
 
   useEffect(() => {
-    ApiService.fetching('search').then(data => setVideos(data))
+    ApiService.fetching('search?part=snippet&q=New').then(data => setVideos(data))
   }, [])
 
   return (
